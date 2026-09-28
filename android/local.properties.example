@@ -1,0 +1,5 @@
+# Copy this file to local.properties and adjust the paths for your machine.
+sdk.dir=/path/to/Android/sdk
+flutter.sdk=/path/to/flutter
+flutter.versionCode=1
+flutter.versionName=1.0.0

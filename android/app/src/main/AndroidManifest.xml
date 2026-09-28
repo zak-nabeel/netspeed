@@ -1,0 +1,46 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Required to run any network transfer (ping / download / upload tests). -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Required to report the current connection type (Wi-Fi / Mobile) and
+         to detect connectivity changes via connectivity_plus. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Required by network_info_plus / connectivity_plus to read the
+         Wi-Fi SSID and local Wi-Fi IP address. No fine/coarse location
+         permission is requested - only Wi-Fi state. -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Intentionally NOT requested: ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION,
+         READ_CONTACTS, CAMERA, RECORD_AUDIO, READ/WRITE_EXTERNAL_STORAGE.
+         NetSpeed does not need them and never asks for them. -->
+
+    <application
+        android:label="NetSpeed"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="false">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+</manifest>
